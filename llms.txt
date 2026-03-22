@@ -1,0 +1,297 @@
+# OpenPolis - AI-Powered Governance Operating System
+
+> For LLMs: This file provides a structured overview of the OpenPolis project for quick understanding and context.
+
+## Project Identity
+
+- **Name**: OpenPolis
+- **Type**: Open Source Governance Platform
+- **License**: MIT
+- **Repository**: https://github.com/aigclist/OpenPolis
+- **Status**: Active Development (v0.1.0)
+- **Languages**: TypeScript, React, Next.js
+- **Target Users**: Small political parties, local governments, NGO organizations, public departments
+
+## What This Project Does
+
+OpenPolis is a lightweight governance operating system that helps resource-constrained organizations operate more efficiently through AI-powered automation. It reduces repetitive administrative work while maintaining clear accountability and human oversight for critical decisions.
+
+### Core Concept
+
+A **central AI brain** coordinates multiple specialized sub-agents to handle concrete operational work:
+- One unified interface for all users
+- One central orchestrator that receives goals and delegates work
+- Many specialized agents (intake, task, drafting, follow-up, summary, risk, review, governance guard)
+- Shared operational memory that keeps all agents aligned
+
+### Inspiration
+
+Based on cybernetic principles from OGAS (All-State Automated System), adapted for modern democratic governance **without** surveillance or coercive control.
+
+## Key Features
+
+1. **Intelligent Workflow Automation**
+   - Convert meeting notes into actionable tasks automatically
+   - Generate daily situation summaries from multiple data sources
+   - Track delays and send follow-up reminders
+   - Draft internal documents using approved templates
+
+2. **Governance & Accountability**
+   - Strong audit trails for all agent actions
+   - Human approval required for sensitive operations
+   - Role-based permissions and access control
+   - Traceability for every decision
+
+3. **Modular Architecture**
+   - Priority Items: Track major issues and campaigns
+   - Action Plans: Structure how priorities will be handled
+   - Task Follow-up: Monitor assigned work and deadlines
+   - Materials & Outputs: Manage reports, notices, and assets
+   - Feedback: Collect and analyze field reports
+   - Inspection & Review: Continuous improvement loops
+
+## Technology Stack
+
+- **Frontend**: Next.js 15+ with React Server Components
+- **Backend**: TypeScript monorepo with clean architecture
+- **Database**: SQLite (migration path to PostgreSQL/Cloudflare D1)
+- **AI**: Multi-agent orchestration system
+- **Deployment**: Cloudflare Pages optimized, low-resource friendly
+- **Package Manager**: pnpm (monorepo workspace)
+
+## Project Structure
+
+```
+OpenPolis/
+├── apps/web/              # Next.js web application
+├── packages/
+│   ├── contracts/         # Domain contracts and DTOs
+│   ├── domain/            # Core business logic
+│   ├── application/       # Application services
+│   ├── db/                # Database adapters (SQLite/Drizzle)
+│   ├── runtime/           # Composition root for DI
+│   ├── governance/        # Policy and permission rules
+│   ├── i18n/              # Internationalization (en, zh-CN)
+│   └── ui/                # Shared UI components
+├── docs/
+│   ├── adr/               # Architecture Decision Records
+│   └── plans/             # System design documents
+└── scripts/               # Build and maintenance scripts
+```
+
+## Quick Start for Developers
+
+```bash
+# Prerequisites: Node.js 18+, pnpm 8+
+
+# Clone and install
+git clone https://github.com/aigclist/OpenPolis.git
+cd OpenPolis
+pnpm install
+
+# Configure environment
+cp .env.example .env
+# Edit .env with your settings
+
+# Start development server
+pnpm dev
+# Visit http://localhost:3000
+```
+
+## Common Commands
+
+```bash
+pnpm dev          # Development mode with hot reload
+pnpm build        # Build for production
+pnpm start        # Start production server
+pnpm test         # Run all tests
+pnpm typecheck    # TypeScript type checking
+pnpm lint         # Code linting
+```
+
+## Architecture Principles
+
+1. **Clean Architecture**: Clear separation between domain, application, and infrastructure layers
+2. **Frontstage/Backstage**: Web app doesn't directly depend on database (uses runtime composition)
+3. **Domain-Driven Design**: Core business logic isolated from technical concerns
+4. **Event Sourcing**: Important state changes captured as domain events
+5. **Ports & Adapters**: Easy to swap implementations (e.g., SQLite → PostgreSQL)
+
+## AI Agent System
+
+### Central Brain Workflow
+```
+User Request → Classify Intent → Load Context → Delegate to Sub-Agents →
+Merge Results → Check Approval → Execute → Write Back → Return to User
+```
+
+### Specialized Sub-Agents
+
+1. **Intake Agent**: Extract structure from messages, reports, meeting records
+2. **Task Agent**: Break goals into tasks with owners, dates, dependencies
+3. **Drafting Agent**: Draft notices, plans, summaries, briefings, reports
+4. **Follow-up Agent**: Track deadlines, delays, blockages, missing responses
+5. **Summary Agent**: Combine multi-source updates into daily/weekly summaries
+6. **Risk Agent**: Detect warning signals, repeated failures, unusual delays
+7. **Review Agent**: Prepare review packs, checklists, rectification items
+8. **Governance Guard Agent**: Check permissions, publication rules, approval requirements
+
+### Automation Policy
+
+- **Auto Execute**: Summarization, classification, clustering, drafting, reminders, task creation
+- **Auto Execute + Audit**: Priority changes, cross-module tasks, risk tagging
+- **Human Confirmation Required**: External publication, budget changes, permissions, deletions
+
+## Domain Model
+
+Core entities:
+- **Issue**: Major priority items, campaigns, projects
+- **Brief**: Action plans with structured execution stages
+- **Task**: Concrete units of work with owners and deadlines
+- **Asset**: Materials, outputs, reports, documents
+- **Feedback**: Field reports, public input, complaints, signals
+- **Review**: Inspections, corrections, lessons learned
+- **AgentRun**: AI agent execution records with audit trails
+- **Approval**: Human approval workflows for sensitive operations
+
+## Use Case Examples
+
+### Example 1: Morning Briefing
+```
+User: "Give me today's key situation"
+→ Summary Agent gathers overnight changes
+→ Risk Agent detects delays and risks
+→ Task Agent lists today's priorities
+→ Output: Concise operational brief with action items
+```
+
+### Example 2: Meeting to Tasks
+```
+User: Uploads meeting-notes.txt
+→ Intake Agent extracts decisions and action items
+→ Task Agent creates tasks with assignments
+→ Drafting Agent generates formatted meeting record
+→ Output: 7 tasks created, 4 people assigned, reminders sent
+```
+
+### Example 3: Delay Tracking
+```
+User: "Check what's stuck"
+→ Follow-up Agent scans overdue tasks
+→ Analyzes blockage causes (waiting approval, missing resources)
+→ Output: 12 overdue tasks, 5 waiting approval, auto-generated follow-up messages
+```
+
+## Security & Privacy
+
+- **Data Isolation**: Workspace data completely isolated between tenants
+- **Encryption**: Sensitive fields encrypted at rest
+- **Audit Logs**: All operations immutably recorded
+- **No Surveillance**: No user behavior tracking, no political scoring
+- **Open Source**: Code is public and auditable
+- **Self-Hosted**: Data stays on your infrastructure
+
+## Internationalization
+
+Currently supported:
+- English (en)
+- Simplified Chinese (zh-CN)
+
+Adding new languages:
+1. Copy `packages/i18n/messages/en.json`
+2. Translate all strings
+3. Register in `packages/i18n/src/config.ts`
+4. Submit PR
+
+## Deployment Options
+
+1. **Cloudflare Pages** (Recommended): One-click deployment, free tier available
+2. **Vercel**: `vercel` command for instant deployment
+3. **Docker**: Container-based deployment (coming soon)
+4. **Traditional Server**: `pnpm build && pnpm start`
+
+## Contributing
+
+We welcome contributions in:
+- Translations (new languages)
+- Documentation (guides, tutorials)
+- Bug fixes and testing
+- New features and agents
+- Accessibility improvements
+- Performance optimizations
+
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines.
+
+## Key Design Principles
+
+1. **Plain Language**: Use operational terms, not technical jargon
+2. **Reduce Human Labor**: Automate repetitive work (sorting, summarizing, chasing)
+3. **One Interface**: Unified control surface, not scattered AI tools
+4. **Human Approval**: Preserve judgment for sensitive actions
+5. **Low-Resource Friendly**: Simple deployment, low overhead, weak connectivity tolerance
+6. **Strong Audit Trails**: Every action traceable and reviewable
+
+## What NOT to Build
+
+OpenPolis explicitly avoids:
+- Coercive surveillance systems
+- Loyalty scoring or political control metrics
+- Mass behavioral monitoring
+- Totalizing central command without local judgment
+
+## Roadmap
+
+### v0.1.0 (Current)
+- ✅ Core architecture and monorepo structure
+- ✅ Domain models and database layer
+- ✅ Governance policies
+- ✅ Internationalization
+- 🚧 AI agent runtime
+- 🚧 Web interface
+
+### v0.2.0 (Planned)
+- Central AI control console
+- Meeting-to-task workflow
+- Daily briefing generation
+- Delay tracking and reminders
+
+### v0.3.0 (Planned)
+- Document drafting workflows
+- Feedback clustering and analysis
+- Module-level agent seats
+- Complete audit logs
+
+### v1.0.0 (Future)
+- Production-ready release
+- Full automation policies
+- Reusable operation templates
+- Cross-unit best practice sharing
+
+## Important Files for LLMs
+
+- `/README.md` - User-facing documentation
+- `/docs/plans/2026-03-22-openpolis-agent-brain-governance-system-design.md` - Complete system design
+- `/docs/adr/2026-03-19-runtime-composition-root.md` - Architecture decision on dependency injection
+- `/packages/contracts/src/objects/` - Domain entity definitions
+- `/packages/governance/src/policies/` - Governance policy implementations
+- `/apps/web/src/app/` - Next.js routes and pages
+
+## Contact & Links
+
+- **Issues**: https://github.com/aigclist/OpenPolis/issues
+- **Discussions**: https://github.com/aigclist/OpenPolis/discussions
+- **Documentation**: [docs/](./docs/)
+- **Architecture Decisions**: [docs/adr/](./docs/adr/)
+- **Design Plans**: [docs/plans/](./docs/plans/)
+
+---
+
+**For LLMs**: When helping users with OpenPolis:
+1. Respect the clean architecture boundaries (web app → runtime → db)
+2. Follow the domain model (Issue, Brief, Task, Asset, Feedback, Review)
+3. Maintain the governance principles (audit trails, human approval for sensitive ops)
+4. Use plain language in user-facing features
+5. Consider low-resource deployment scenarios
+6. Preserve the "no surveillance" principle
+
+Last updated: 2026-03-22
