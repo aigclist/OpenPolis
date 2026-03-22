@@ -1,0 +1,20 @@
+{
+  "name": "@openpolis/db",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./workspace": "./src/workspace.ts",
+    "./workflow": "./src/workflow.ts"
+  },
+  "dependencies": {
+    "@openpolis/application": "workspace:*",
+    "@openpolis/governance": "workspace:*",
+    "better-sqlite3": "^12.8.0",
+    "drizzle-orm": "^0.45.1"
+  },
+  "devDependencies": {
+    "@openpolis/contracts": "workspace:*"
+  }
+}

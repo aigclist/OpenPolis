@@ -1,0 +1,1214 @@
+{
+  "metadata": {
+    "title": "OpenPolis",
+    "description": "Agent-native, self-hostable democratic operations infrastructure for mission-driven organizations."
+  },
+  "common": {
+    "actions": {
+      "open": "Open",
+      "review": "Review",
+      "inspect": "Inspect",
+      "approve": "Approve",
+      "reject": "Reject",
+      "switchLocale": "Switch language"
+    },
+    "options": {
+      "none": "No link"
+    },
+    "actionErrors": {
+      "validation": {
+        "title": "Check the submitted fields",
+        "description": "One or more required fields are missing or invalid."
+      },
+      "csrf": {
+        "title": "Request blocked",
+        "description": "This request did not pass the workspace origin security checks. Refresh the page and try again."
+      },
+      "auth": {
+        "title": "Authentication required",
+        "description": "Sign in with a valid operator account before trying again."
+      },
+      "forbidden": {
+        "title": "Permission denied",
+        "description": "The current actor is not allowed to perform this action."
+      },
+      "not_found": {
+        "title": "Linked record not found",
+        "description": "One of the referenced workflow records no longer exists or is unavailable."
+      },
+      "conflict": {
+        "title": "State conflict detected",
+        "description": "The target record changed state and this action is no longer valid."
+      },
+      "system": {
+        "title": "System error",
+        "description": "The request could not be completed because of a server-side failure."
+      }
+    },
+    "labels": {
+      "code": "Code",
+      "owner": "Owner",
+      "assignee": "Assignee",
+      "reviewer": "Reviewer",
+      "requestedBy": "Requested by",
+      "updated": "Updated",
+      "due": "Due",
+      "scope": "Scope",
+      "kind": "Kind",
+      "status": "Status",
+      "priority": "Priority",
+      "issue": "Issue",
+      "brief": "Brief",
+      "task": "Task",
+      "review": "Review",
+      "subject": "Subject",
+      "source": "Source",
+      "locale": "Locale",
+      "sensitivity": "Sensitivity"
+    },
+    "accessibility": {
+      "close": "Close",
+      "loading": "Loading",
+      "toggleSidebar": "Toggle sidebar",
+      "carousel": "Carousel",
+      "slide": "Slide",
+      "previousSlide": "Previous slide",
+      "nextSlide": "Next slide"
+    },
+    "command": {
+      "title": "Command palette",
+      "description": "Search for a command to run..."
+    },
+    "status": {
+      "active": "Active",
+      "monitoring": "Monitoring",
+      "response_needed": "Response needed",
+      "draft": "Draft",
+      "approved": "Approved",
+      "localized": "Localized",
+      "in_review": "In review",
+      "changes_requested": "Changes requested",
+      "blocked": "Blocked",
+      "queued": "Queued",
+      "scheduled": "Scheduled",
+      "generated": "Generated",
+      "ready": "Ready",
+      "enabled": "Enabled",
+      "restricted": "Restricted",
+      "configured": "Configured",
+      "attention": "Attention",
+      "resolved": "Resolved",
+      "archived": "Archived"
+    },
+    "priority": {
+      "critical": "Critical",
+      "high": "High",
+      "medium": "Medium",
+      "steady": "Steady"
+    },
+    "source": {
+      "human": "Human",
+      "ai_assisted": "AI assisted",
+      "external": "External",
+      "internal": "Internal",
+      "field": "Field",
+      "media": "Media",
+      "volunteer": "Volunteer",
+      "event": "Event"
+    },
+    "sensitivity": {
+      "public": "Public",
+      "internal": "Internal",
+      "restricted": "Restricted",
+      "confidential": "Confidential"
+    }
+  },
+  "pagination": {
+    "page": "Page {current} of {total}",
+    "totalItems": "{count} total items",
+    "previous": "Previous",
+    "next": "Next"
+  },
+  "shell": {
+    "brand": {
+      "name": "OpenPolis",
+      "tagline": "Agent-native democratic operations infrastructure"
+    },
+    "navigation": {
+      "dashboard": "Overview",
+      "issues": "Priority Items",
+      "assets": "Materials",
+      "briefs": "Action Plans",
+      "operations": "Task Follow-up",
+      "network": "Areas & Units",
+      "calendar": "Schedule",
+      "feedback": "Feedback",
+      "review": "Inspection & Review",
+      "reports": "Reports"
+    },
+    "utility": {
+      "aiWorkspace": "AI Control",
+      "skills": "Skills",
+      "settings": "Settings",
+      "admin": "Admin",
+      "docs": "Docs"
+    },
+    "groups": {
+      "control": "Control",
+      "moveWork": "Move Work Forward",
+      "knowWhatIsHappening": "Know What Is Happening",
+      "systemManagement": "System Management"
+    },
+    "header": {
+      "eyebrow": "Unified control desk",
+      "title": "AI-guided operations",
+      "description": "One front door for priorities, follow-up, review gates, and traceable execution.",
+      "deployment": "Self-hosted and portable",
+      "governance": "High automation, full traceability"
+    },
+    "locale": {
+      "en": "English",
+      "zh-CN": "Simplified Chinese"
+    }
+  },
+  "dashboard": {
+    "title": "Command Dashboard",
+    "description": "See the leading issues, execution pressure, regional variance, and agent support queues from a single screen.",
+    "panels": {
+      "priorities": {
+        "title": "Today's priorities",
+        "description": "The issues that require the fastest coordination loop."
+      },
+      "operations": {
+        "title": "Execution snapshot",
+        "description": "Open work, blocked items, and approvals that shape the current tempo."
+      },
+      "regions": {
+        "title": "Regional execution",
+        "description": "Completion and blocker signals across the active network."
+      },
+      "feedback": {
+        "title": "Escalated feedback",
+        "description": "Field signals that should influence the next response cycle."
+      },
+      "review": {
+        "title": "Approval queue",
+        "description": "Review steps that still need accountable humans in the loop."
+      },
+      "aiWorkspace": {
+        "title": "AI control",
+        "description": "One front door for high-automation work, narrow confirmation gates, and traceable actions."
+      },
+      "skills": {
+        "title": "Skill registry",
+        "description": "Scoped capabilities available to agents and reviewers."
+      }
+    },
+    "metrics": {
+      "openTasks": "Open tasks",
+      "inReview": "In review",
+      "blocked": "Blocked",
+      "urgentFeedback": "Urgent feedback"
+    }
+  },
+  "modules": {
+    "issues": {
+      "eyebrow": "Priority tracking",
+      "title": "Priority Items",
+      "description": "The major issues, campaigns, and projects the organization is actively pushing."
+    },
+    "assets": {
+      "eyebrow": "Materials and outputs",
+      "title": "Materials & Outputs",
+      "description": "Drafts, notices, briefs, attachments, and reusable materials linked to live work."
+    },
+    "briefs": {
+      "eyebrow": "Action planning",
+      "title": "Action Plans",
+      "description": "Turn priorities into clear plans with stages, owners, deadlines, and scope."
+    },
+    "operations": {
+      "eyebrow": "Task follow-up",
+      "title": "Task Follow-up",
+      "description": "Track assignments, delays, blockers, and reminders as work moves forward."
+    },
+    "network": {
+      "eyebrow": "Areas and units",
+      "title": "Areas & Units",
+      "description": "See which places and offices are moving well, lagging, or need coordination help."
+    },
+    "calendar": {
+      "eyebrow": "Schedule rhythm",
+      "title": "Schedule",
+      "description": "Keep operational timing, meetings, events, and publication windows in one view."
+    },
+    "feedback": {
+      "eyebrow": "Field feedback",
+      "title": "Feedback",
+      "description": "Bring local reports, public signals, and frontline updates back into execution."
+    },
+    "review": {
+      "eyebrow": "Inspection and review",
+      "title": "Inspection & Review",
+      "description": "Checks, corrections, approvals, and follow-through for work that needs accountability."
+    },
+    "reports": {
+      "eyebrow": "Briefing and reporting",
+      "title": "Reports",
+      "description": "Prepare short briefs, scorecards, and export-ready summaries for follow-through."
+    },
+    "aiWorkspace": {
+      "eyebrow": "AI control",
+      "title": "AI Control",
+      "description": "One front door for assignment intake, sub-agent routing, results, confirmations, and traceable action history."
+    },
+    "skills": {
+      "eyebrow": "Capability registry",
+      "title": "Skills",
+      "description": "Composable skills that stay bounded by workflow scope, permissions, and review gates."
+    },
+    "settings": {
+      "eyebrow": "Configuration",
+      "title": "Settings",
+      "description": "Locale, deployment, and retention defaults aligned with self-hosted operations."
+    },
+    "admin": {
+      "eyebrow": "Governance controls",
+      "title": "Admin",
+      "description": "Policies, audit defaults, and operator boundaries for the platform core."
+    }
+  },
+  "recordDetail": {
+    "title": "Selected Record",
+    "description": "Structured context, linked objects, and governance metadata for the active record.",
+    "back": "Back to {module}",
+    "sections": {
+      "timing": "Timing",
+      "coordination": "Coordination",
+      "links": "Linked Objects",
+      "governance": "Governance"
+    }
+  },
+  "recordActions": {
+    "title": "Next Actions",
+    "description": "Move this record into the next governed workflow step without bypassing review.",
+    "createBrief": "Create brief",
+    "createAssetDraft": "Create asset draft",
+    "createTask": "Create task",
+    "captureFeedback": "Capture feedback",
+    "submitReview": "Submit review",
+    "recordDecision": "Record decision",
+    "templates": {
+      "briefFromIssue": {
+        "title": "{title} brief",
+        "summary": "Turn {title} into a governed brief with goals, audience, and approval checkpoints."
+      },
+      "assetFromIssue": {
+        "title": "{title} asset draft",
+        "summary": "Prepare a reusable asset draft for {title} and keep it aligned with the active issue context."
+      },
+      "taskFromIssue": {
+        "title": "{title} task",
+        "summary": "Create an execution task for {title} with a clear owner, delivery step, and review path."
+      },
+      "assetFromBrief": {
+        "title": "{title} asset draft",
+        "summary": "Produce a reusable asset draft from {title} and keep the brief constraints intact."
+      },
+      "taskFromBrief": {
+        "title": "{title} task",
+        "summary": "Convert {title} into an execution task with clear ownership and a governed handoff."
+      },
+      "reviewFromAsset": {
+        "title": "{title} review"
+      },
+      "feedbackFromTask": {
+        "title": "{title} feedback",
+        "summary": "Capture field or internal feedback related to {title} and route it back into the governed workflow."
+      }
+    }
+  },
+  "docs": {
+    "title": "Project docs",
+    "description": "Principles, architecture notes, and the current implementation outline.",
+    "navTitle": "OpenPolis Docs"
+  },
+  "aiWorkspace": {
+    "inputTitle": "One-line assignment",
+    "inputDescription": "Tell the central agent what needs to be done. It will route the work, merge the outputs, and stop only at the few required confirmation gates.",
+    "promptPlaceholder": "Example: summarize today's regional situation, draft a follow-up notice, and flag anything that needs my approval.",
+    "promptHelper": "Quick starts fill the box with high-frequency assignments. This first visible version keeps the control desk focused on routing, results, and traceable records.",
+    "submit": "Send to AI Control",
+    "quickActions": {
+      "today": {
+        "label": "See today's situation",
+        "prompt": "Summarize today's overall situation, highlight what changed overnight, and tell me what needs attention first."
+      },
+      "materials": {
+        "label": "Organize new materials",
+        "prompt": "Read the new notes, reports, and attachments, then turn them into a clean summary with clear follow-up items."
+      },
+      "tasks": {
+        "label": "Create tasks",
+        "prompt": "Turn the latest meeting decisions into named tasks with owners, deadlines, and follow-up points."
+      },
+      "followUp": {
+        "label": "Follow up delays",
+        "prompt": "Find overdue work, repeated delays, and blocked handoffs, then prepare the next follow-up actions."
+      }
+    },
+    "stats": {
+      "connectedProviders": "Connected providers",
+      "connectedProvidersDetail": "Live systems and model routes the control desk can call into.",
+      "enabledSkills": "Enabled skills",
+      "enabledSkillsDetail": "Scoped capabilities the sub agents can use without widening permissions.",
+      "guardedScopes": "Guarded scopes",
+      "guardedScopesDetail": "Provider lanes currently held behind stricter boundaries or review rules.",
+      "jobsInMotion": "Jobs in motion",
+      "jobsInMotionDetail": "High-value assignments the control desk is already routing across sub agents."
+    },
+    "sections": {
+      "results": {
+        "title": "Main results",
+        "description": "Prepared outputs that are ready to read, route, or act on."
+      },
+      "activeWork": {
+        "title": "Active work",
+        "description": "Assignments the control desk is routing right now."
+      },
+      "confirmations": {
+        "title": "Needs your confirmation",
+        "description": "Keep this queue short. Only the highest-consequence actions stop here."
+      },
+      "evidence": {
+        "title": "Evidence and record",
+        "description": "Every important result should have a visible trail behind it."
+      },
+      "agents": {
+        "title": "Sub-agent seats",
+        "description": "Each agent has a narrow job, a bounded role, and a clear contribution to the control desk."
+      },
+      "readiness": {
+        "title": "System readiness",
+        "description": "Ground the control desk in the providers and skills already available in this workspace."
+      }
+    },
+    "labels": {
+      "load": "Load"
+    },
+    "alerts": {
+      "created": {
+        "title": "Assignment sent",
+        "description": "The control desk logged the assignment and routed it into the agent queue."
+      },
+      "error": {
+        "title": "Assignment failed",
+        "description": "Check the request and try again."
+      },
+      "responseCreated": {
+        "title": "Decision recorded",
+        "description": "The human decision was written to the agent record and the queue refreshed."
+      },
+      "responseError": {
+        "title": "Decision failed",
+        "description": "The confirmation could not be recorded. Try again."
+      }
+    },
+    "emptyStates": {
+      "results": {
+        "title": "No finished agent runs yet",
+        "description": "New assignments appear in active work first. Finished runs will show up here after the execution layer closes them."
+      },
+      "activeWork": {
+        "title": "No work is moving right now",
+        "description": "Send one line of work to the control desk and the live assignment will appear here."
+      },
+      "confirmations": {
+        "title": "Nothing is waiting for confirmation",
+        "description": "High-consequence actions will stop here instead of being executed silently."
+      }
+    },
+    "jobStatus": {
+      "running": "Running",
+      "review": "Awaiting review",
+      "queued": "Queued"
+    },
+    "runStatus": {
+      "pending": "Pending",
+      "running": "Running",
+      "waitingHumanReview": "Waiting for review",
+      "completed": "Completed",
+      "failed": "Failed",
+      "cancelled": "Cancelled"
+    },
+    "runMode": {
+      "advisory": "Advice",
+      "drafting": "Drafting",
+      "stateChanging": "State change"
+    },
+    "approval": {
+      "required": "Required",
+      "pending": "Pending",
+      "approved": "Approved",
+      "rejected": "Rejected",
+      "notRequired": "Not required"
+    },
+    "dynamic": {
+      "pendingSummary": "{skill} is queued through the {provider} lane and will start once the current slot opens.",
+      "runningSummary": "{skill} is handling this assignment through the {provider} lane.",
+      "waitingSummary": "{skill} prepared the next step through {provider} and paused for human review before continuing.",
+      "completedSummary": "{skill} finished this assignment and logged the result.",
+      "failedSummary": "{skill} could not finish this assignment and needs inspection.",
+      "cancelledSummary": "This assignment was stopped and kept in the record for traceability.",
+      "activeMeta": "Target: {target} • Updated: {updated}",
+      "resultMeta": "Approval: {approval} • Finished: {finished}",
+      "requiresApproval": "This stopped here because the assignment can change records, permissions, or outbound actions.",
+      "confirmationOwner": "Target: {target} • Updated: {updated}"
+    },
+    "resultBadges": {
+      "ready": "Ready",
+      "briefing": "Briefing",
+      "followUp": "Follow-up",
+      "internal": "Internal",
+      "signals": "Signals",
+      "clustered": "Clustered"
+    },
+    "activeJobs": {
+      "briefing": {
+        "title": "Morning situation brief",
+        "summary": "Merging regional movement, late tasks, and field updates into one short leadership picture.",
+        "meta": "Summary agent leading, risk and governance checks attached."
+      },
+      "followUp": {
+        "title": "Delay follow-up pass",
+        "summary": "Checking stalled tasks, repeated slippage, and which units need the next reminder or escalation.",
+        "meta": "Waiting on the final bounded handoff list before pushing reminders."
+      },
+      "feedback": {
+        "title": "Field signal digest",
+        "summary": "Reading fresh local updates, grouping repeated signals, and separating noise from issues worth escalation.",
+        "meta": "Intake queue is still processing the newest batch of reports."
+      }
+    },
+    "results": {
+      "morning": {
+        "title": "Today's operating picture is prepared",
+        "summary": "A short morning brief is ready with the leading priority, the slowest units, and the first issues that need attention.",
+        "meta": "Includes regional movement, fresh exceptions, and a short action order."
+      },
+      "delays": {
+        "title": "Delay follow-up packet is ready",
+        "summary": "A draft internal follow-up list is prepared for late tasks, blocked handoffs, and units that missed the last response window.",
+        "meta": "Prepared for the task follow-up lane with the reminder wording already drafted."
+      },
+      "field": {
+        "title": "Field feedback digest is clustered",
+        "summary": "The latest field, media, and office reports are grouped into signal clusters so humans do not need to read every raw note.",
+        "meta": "High-noise updates were collapsed, with escalation candidates pulled to the top."
+      }
+    },
+    "confirmations": {
+      "release": {
+        "title": "Release internal follow-up notice",
+        "summary": "The control desk prepared a follow-up notice tied to the latest delay packet.",
+        "reason": "This stops here because it would trigger a formal internal instruction.",
+        "owner": "Owner: Central operations review lane"
+      },
+      "permissions": {
+        "title": "Approve a tighter agent scope",
+        "summary": "A provider path is requesting a narrower permission profile before the next automated pass.",
+        "reason": "This stops here because permission changes should never be applied silently.",
+        "owner": "Owner: System governance lane"
+      }
+    },
+    "evidence": {
+      "activity": {
+        "title": "Today's agent activity",
+        "summary": "See which jobs were opened, which sub agents ran, and what they touched."
+      },
+      "changes": {
+        "title": "Recent state changes",
+        "summary": "Trace which tasks, statuses, and linked records changed after agent work ran."
+      },
+      "guardrails": {
+        "title": "Guardrail checks",
+        "summary": "Inspect the rule paths, skills, and scope checks used before sensitive actions."
+      }
+    },
+    "agentStatus": {
+      "busy": "Busy",
+      "steady": "Steady",
+      "watch": "Watch",
+      "guarded": "Guarded"
+    },
+    "agents": {
+      "intake": {
+        "name": "Intake Agent",
+        "role": "Reads incoming materials",
+        "summary": "Turns rough notes, reports, and message fragments into structured work objects."
+      },
+      "task": {
+        "name": "Task Agent",
+        "role": "Breaks work into assignments",
+        "summary": "Converts goals and decisions into owners, deadlines, dependencies, and reminders."
+      },
+      "drafting": {
+        "name": "Drafting Agent",
+        "role": "Prepares documents",
+        "summary": "Builds notices, briefings, summaries, and follow-up drafts from live records and templates."
+      },
+      "summary": {
+        "name": "Summary Agent",
+        "role": "Compresses large update flows",
+        "summary": "Turns many updates into a short picture that a human can read in one pass."
+      },
+      "risk": {
+        "name": "Risk Agent",
+        "role": "Looks for abnormal signals",
+        "summary": "Flags repeated delays, sudden spikes, weak follow-through, and issues worth escalation."
+      },
+      "governance": {
+        "name": "Governance Guard",
+        "role": "Checks boundaries before action",
+        "summary": "Applies scope rules, review gates, and sensitivity checks before higher-risk execution."
+      }
+    },
+    "readiness": {
+      "providersTitle": "Connected providers",
+      "skillsTitle": "Enabled skills and scopes"
+    }
+  },
+  "settings": {
+    "cards": {
+      "locales": "Configured locales",
+      "retention": "Data retention policy",
+      "exports": "Portable export profile"
+    }
+  },
+  "operatorSession": {
+    "onboarding": {
+      "title": "Initialize the first operator",
+      "description": "Create the first real operator account before protected workspace routes can be used.",
+      "submit": "Create operator account",
+      "initialRole": {
+        "title": "Initial assignment preset",
+        "description": "The first operator is created with the central ops preset so it can bootstrap the workspace and invite additional operators."
+      },
+      "fields": {
+        "name": {
+          "label": "Full name",
+          "placeholder": "Enter the operator name"
+        },
+        "email": {
+          "label": "Email address",
+          "placeholder": "Enter the operator email"
+        },
+        "password": {
+          "label": "Password",
+          "placeholder": "Create a password"
+        },
+        "confirmPassword": {
+          "label": "Confirm password",
+          "placeholder": "Re-enter the password"
+        }
+      }
+    },
+    "signIn": {
+      "title": "Operator sign-in",
+      "description": "Authenticate an operator session before reading or mutating governed workspace records.",
+      "submit": "Sign in",
+      "fields": {
+        "email": {
+          "label": "Email address",
+          "placeholder": "Enter the operator email"
+        },
+        "password": {
+          "label": "Password",
+          "placeholder": "Enter the operator password"
+        }
+      },
+      "notConfigured": {
+        "title": "Operator auth is not configured",
+        "description": "Set BETTER_AUTH_SECRET and BETTER_AUTH_URL to enable Better Auth-backed operator sessions."
+      }
+    },
+    "status": {
+      "title": "Current actor",
+      "description": "Review the actor source that will be applied to governed reads and writes for this browser.",
+      "active": {
+        "title": "Authenticated session active",
+        "description": "This browser is using a Better Auth operator session."
+      },
+      "inactive": {
+        "title": "No authenticated session",
+        "bootstrapDescription": "Operator auth is not configured, so requests still use the local bootstrap actor.",
+        "onboardingDescription": "Operator auth is configured, but no operator account exists yet. Initialize the first operator account to unlock protected workspace routes.",
+        "enforcedDescription": "Operator auth is configured, so unauthenticated workspace routes redirect here and workflow commands stay blocked until sign-in."
+      },
+      "fields": {
+        "source": "Actor source",
+        "userName": "Account name",
+        "userEmail": "Account email",
+        "actorId": "Actor ID",
+        "role": "Role",
+        "team": "Team",
+        "region": "Region",
+        "profile": "Profile",
+        "expiresAt": "Expires at"
+      },
+      "sources": {
+        "session": "Authenticated session",
+        "override": "Development override",
+        "bootstrap": "Bootstrap actor",
+        "anonymous": "Anonymous viewer"
+      },
+      "signOut": "Sign out",
+      "emptyValue": "Not set"
+    },
+    "profiles": {
+      "central_ops": "Central ops",
+      "reviewer": "Reviewer",
+      "regional_manager_north": "Regional manager (North)",
+      "viewer": "Viewer"
+    },
+    "alerts": {
+      "initialized": {
+        "title": "Operator initialized",
+        "description": "The first operator account was created and signed in for this browser."
+      },
+      "signed_in": {
+        "title": "Signed in",
+        "description": "A Better Auth operator session was created for this browser."
+      },
+      "signed_out": {
+        "title": "Signed out",
+        "description": "The operator session was cleared from this browser."
+      },
+      "error": {
+        "title": "Sign-in failed",
+        "description": "Check the submitted account details and Better Auth configuration, then try again."
+      }
+    }
+  },
+  "admin": {
+    "cards": {
+      "roles": "Governed roles",
+      "audit": "Audit policy",
+      "sensitive": "Sensitive field policy"
+    },
+    "alerts": {
+      "created": {
+        "title": "Operator account created",
+        "description": "The new operator account is ready for email and password sign-in."
+      }
+    },
+    "notConfigured": {
+      "title": "Better Auth is not configured",
+      "description": "Operator account management is only available after Better Auth session support is configured."
+    },
+    "access": {
+      "denied": {
+        "title": "Operator management is restricted",
+        "description": "Only central ops or super admin operators can create additional operator accounts."
+      }
+    },
+    "create": {
+      "title": "Create operator account",
+      "description": "Provision a new operator account and attach one of the supported assignment presets.",
+      "submit": "Create account",
+      "fields": {
+        "name": {
+          "label": "Full name",
+          "placeholder": "Enter the operator name"
+        },
+        "email": {
+          "label": "Email address",
+          "placeholder": "Enter the operator email"
+        },
+        "password": {
+          "label": "Password",
+          "placeholder": "Create a password"
+        },
+        "confirmPassword": {
+          "label": "Confirm password",
+          "placeholder": "Re-enter the password"
+        },
+        "profile": {
+          "label": "Assignment preset"
+        }
+      }
+    },
+    "accounts": {
+      "title": "Operator accounts",
+      "description": "Review the real operator accounts currently provisioned in Better Auth.",
+      "loadError": {
+        "title": "Unable to load operator accounts",
+        "description": "The admin surface loaded, but Better Auth account records could not be retrieved."
+      },
+      "empty": {
+        "title": "No operator accounts",
+        "description": "Create the first operator account to establish governed access."
+      },
+      "fields": {
+        "actorId": "Actor ID",
+        "createdAt": "Created at",
+        "team": "Team",
+        "region": "Region"
+      }
+    }
+  },
+  "issueIntake": {
+    "title": "Quick issue capture",
+    "description": "Capture a new issue as task-ready information and route it into the governed workflow.",
+    "submit": "Create issue",
+    "fields": {
+      "title": {
+        "label": "Issue title",
+        "placeholder": "Enter the issue title"
+      },
+      "summary": {
+        "label": "Issue summary",
+        "placeholder": "Describe the response context, pressure, or next action"
+      }
+    },
+    "alerts": {
+      "created": {
+        "title": "Issue captured",
+        "description": "The new issue was stored and added to the issues queue."
+      },
+      "error": {
+        "title": "Issue capture failed",
+        "description": "Check the required fields and try again."
+      }
+    }
+  },
+  "briefIntake": {
+    "title": "Create brief",
+    "description": "Capture a structured brief that can move into review and execution without rebuilding the context.",
+    "submit": "Create brief",
+    "fields": {
+      "title": {
+        "label": "Brief title",
+        "placeholder": "Enter the brief title"
+      },
+      "summary": {
+        "label": "Brief summary",
+        "placeholder": "Describe the goal, constraints, and expected output"
+      },
+      "issueCode": {
+        "label": "Linked issue"
+      }
+    },
+    "alerts": {
+      "created": {
+        "title": "Brief created",
+        "description": "The new brief was stored and added to the briefs queue."
+      },
+      "error": {
+        "title": "Brief creation failed",
+        "description": "Check the required fields and try again."
+      }
+    }
+  },
+  "assetDraft": {
+    "title": "Create asset draft",
+    "description": "Create a new asset draft that can move into approval without leaving the workspace.",
+    "submit": "Create draft",
+    "fields": {
+      "title": {
+        "label": "Asset title",
+        "placeholder": "Enter the asset title"
+      },
+      "summary": {
+        "label": "Asset summary",
+        "placeholder": "Describe the material, audience, or intended use"
+      },
+      "issueCode": {
+        "label": "Linked issue"
+      },
+      "briefCode": {
+        "label": "Linked brief"
+      },
+      "kind": {
+        "label": "Asset kind"
+      }
+    },
+    "options": {
+      "kind": {
+        "image": "Image",
+        "video": "Video",
+        "speech": "Speech",
+        "social_post": "Social post",
+        "faq": "FAQ",
+        "pdf": "PDF",
+        "template": "Template",
+        "briefing_note": "Briefing note"
+      }
+    },
+    "alerts": {
+      "created": {
+        "title": "Draft created",
+        "description": "The asset draft was stored and added to the assets queue."
+      },
+      "error": {
+        "title": "Draft creation failed",
+        "description": "Check the required fields and try again."
+      }
+    }
+  },
+  "approvalSubmit": {
+    "title": "Submit approval",
+    "description": "Open a human review request for an existing asset by referencing its asset code.",
+    "submit": "Submit review",
+    "fields": {
+      "title": {
+        "label": "Review title",
+        "placeholder": "Enter the review title"
+      },
+      "assetCode": {
+        "label": "Asset code",
+        "placeholder": "Enter the asset code from the assets queue"
+      }
+    },
+    "alerts": {
+      "created": {
+        "title": "Review submitted",
+        "description": "The approval request was created and added to the review queue."
+      },
+      "error": {
+        "title": "Review submission failed",
+        "description": "Check the asset code and required fields before trying again."
+      }
+    }
+  },
+  "approvalResponse": {
+    "title": "Respond to approval",
+    "description": "Record a human decision on an approval request that was created in the governed workflow.",
+    "submit": "Record decision",
+    "fields": {
+      "approvalCode": {
+        "label": "Approval code"
+      },
+      "decision": {
+        "label": "Decision"
+      }
+    },
+    "options": {
+      "decision": {
+        "approved": "Approve",
+        "changes_requested": "Request changes",
+        "rejected": "Reject"
+      }
+    },
+    "alerts": {
+      "created": {
+        "title": "Decision recorded",
+        "description": "The approval record was updated and the review queue refreshed."
+      },
+      "error": {
+        "title": "Decision failed",
+        "description": "Check the selected approval and try again."
+      }
+    }
+  },
+  "taskIntake": {
+    "title": "Create task",
+    "description": "Create an execution task with a clear priority so the operations queue can absorb it immediately.",
+    "submit": "Create task",
+    "fields": {
+      "title": {
+        "label": "Task title",
+        "placeholder": "Enter the task title"
+      },
+      "summary": {
+        "label": "Task summary",
+        "placeholder": "Describe the delivery expectation or blocker context"
+      },
+      "issueCode": {
+        "label": "Linked issue"
+      },
+      "briefCode": {
+        "label": "Linked brief"
+      },
+      "priority": {
+        "label": "Priority"
+      }
+    },
+    "options": {
+      "priority": {
+        "critical": "Critical",
+        "high": "High",
+        "medium": "Medium",
+        "steady": "Steady"
+      }
+    },
+    "alerts": {
+      "created": {
+        "title": "Task created",
+        "description": "The task was stored and added to the operations queue."
+      },
+      "error": {
+        "title": "Task creation failed",
+        "description": "Check the required fields and try again."
+      }
+    }
+  },
+  "feedbackIntake": {
+    "title": "Capture feedback",
+    "description": "Capture a field or internal signal and route it into the feedback queue with a severity level.",
+    "submit": "Capture feedback",
+    "fields": {
+      "title": {
+        "label": "Feedback title",
+        "placeholder": "Enter the feedback title"
+      },
+      "summary": {
+        "label": "Feedback summary",
+        "placeholder": "Describe the signal, blocker, or escalation context"
+      },
+      "issueCode": {
+        "label": "Linked issue"
+      },
+      "taskCode": {
+        "label": "Linked task"
+      },
+      "severity": {
+        "label": "Severity"
+      }
+    },
+    "options": {
+      "severity": {
+        "critical": "Critical",
+        "high": "High",
+        "medium": "Medium",
+        "low": "Low"
+      }
+    },
+    "alerts": {
+      "created": {
+        "title": "Feedback captured",
+        "description": "The feedback record was stored and added to the feedback queue."
+      },
+      "error": {
+        "title": "Feedback capture failed",
+        "description": "Check the required fields and try again."
+      }
+    }
+  },
+  "records": {
+    "issues": {
+      "housing_transparency": {
+        "title": "Housing transparency initiative",
+        "summary": "Refresh the issue stack before the next municipal listening tour."
+      },
+      "youth_participation": {
+        "title": "Youth participation program",
+        "summary": "Align campus and neighborhood language before volunteer onboarding."
+      },
+      "budget_oversight": {
+        "title": "Budget oversight response",
+        "summary": "Prepare public-facing clarifications for the next oversight hearing."
+      }
+    },
+    "assets": {
+      "rapid_response_pack": {
+        "title": "Rapid response asset pack",
+        "summary": "Core response graphics and quote cards for active issue windows."
+      },
+      "regional_video_template": {
+        "title": "Regional video template",
+        "summary": "Localized motion template for district-level briefing clips."
+      },
+      "candidate_brief_card": {
+        "title": "Candidate brief card",
+        "summary": "Short-form factsheet for candidate teams and surrogates."
+      }
+    },
+    "briefs": {
+      "municipal_listening_tour": {
+        "title": "Municipal listening tour brief",
+        "summary": "Audience framing and FAQ requirements for the next field sequence."
+      },
+      "housing_response_brief": {
+        "title": "Housing response brief",
+        "summary": "Context, constraints, and approval gates for public-facing answers."
+      },
+      "volunteer_onboarding_wave": {
+        "title": "Volunteer onboarding wave",
+        "summary": "Training materials, local routing, and reporting expectations."
+      }
+    },
+    "tasks": {
+      "review_publish_cycle": {
+        "title": "Review and publish cycle",
+        "summary": "Move approved issue materials through the final release queue."
+      },
+      "field_training_pack": {
+        "title": "Field training pack",
+        "summary": "Assemble materials and reviewer notes for regional training leads."
+      },
+      "volunteer_route_sync": {
+        "title": "Volunteer route sync",
+        "summary": "Update handoff coverage for the next neighborhood wave."
+      }
+    },
+    "regions": {
+      "north_network": {
+        "title": "North network",
+        "summary": "Strong completion pace with one unresolved media blocker."
+      },
+      "coastal_district": {
+        "title": "Coastal district",
+        "summary": "Localized materials are ready, but task routing is lagging."
+      },
+      "inland_coalition": {
+        "title": "Inland coalition",
+        "summary": "Volunteer coverage is improving after the last coordination handoff."
+      }
+    },
+    "events": {
+      "policy_townhall": {
+        "title": "Policy town hall",
+        "summary": "Public issue forum tied to housing transparency messaging."
+      },
+      "regional_press_window": {
+        "title": "Regional press window",
+        "summary": "Embargoed publication slot for localized talking points."
+      },
+      "volunteer_orientation": {
+        "title": "Volunteer orientation",
+        "summary": "Introductory session for new coordinators and field responders."
+      }
+    },
+    "feedback": {
+      "media_question_queue": {
+        "title": "Media question queue",
+        "summary": "A cluster of follow-up questions needs a refreshed approved answer."
+      },
+      "local_office_blocker": {
+        "title": "Local office blocker",
+        "summary": "A region is missing approved assets for the next event window."
+      },
+      "volunteer_signal_cluster": {
+        "title": "Volunteer signal cluster",
+        "summary": "Field coordinators report confusion around the latest FAQ changes."
+      }
+    },
+    "reviews": {
+      "candidate_talking_points": {
+        "title": "Candidate talking points",
+        "summary": "Human approval is still required before external distribution."
+      },
+      "regional_asset_bundle": {
+        "title": "Regional asset bundle",
+        "summary": "Localized pack pending final legal and message consistency review."
+      },
+      "crisis_response_note": {
+        "title": "Crisis response note",
+        "summary": "Sensitive note needs an explicit approver before publication."
+      }
+    },
+    "reports": {
+      "daily_command_digest": {
+        "title": "Daily command digest",
+        "summary": "Cross-module summary of issue pressure, approvals, and escalations."
+      },
+      "weekly_region_score": {
+        "title": "Weekly regional scorecard",
+        "summary": "Compares delivery pace and blocker trends across regions."
+      },
+      "audit_trail_export": {
+        "title": "Audit trail export",
+        "summary": "Portable review and activity history for self-hosted governance."
+      }
+    },
+    "skills": {
+      "issue_summarizer": {
+        "title": "Issue summarizer",
+        "summary": "Condenses research material into structured issue updates."
+      },
+      "brief_drafter": {
+        "title": "Brief drafter",
+        "summary": "Builds task-ready briefs from issues, audiences, and constraints."
+      },
+      "approval_guard": {
+        "title": "Approval guard",
+        "summary": "Flags missing reviewers, risky changes, and unapproved release paths."
+      }
+    },
+    "providers": {
+      "custom_gateway": {
+        "title": "Custom gateway",
+        "summary": "OpenAI-compatible endpoint for self-hosted or proxied models."
+      },
+      "anthropic_bridge": {
+        "title": "Anthropic bridge",
+        "summary": "Adapter slot for Claude tooling and bounded agent execution."
+      },
+      "local_fallback": {
+        "title": "Local fallback",
+        "summary": "Offline-safe provider slot for development and constrained deployments."
+      }
+    }
+  },
+  "routeState": {
+    "loading": {
+      "global": {
+        "title": "Loading workspace",
+        "description": "Preparing the current route and fetching the latest governed data."
+      },
+      "app": {
+        "title": "Loading module",
+        "description": "Fetching records, approvals, and command context for this workspace module."
+      },
+      "docs": {
+        "title": "Loading documentation",
+        "description": "Preparing navigation, content, and locale-specific docs metadata."
+      }
+    },
+    "error": {
+      "global": {
+        "title": "Unable to load this route",
+        "description": "A rendering or data access error interrupted this route. Retry safely once the dependency is available again.",
+        "retry": "Try again",
+        "details": "Technical details"
+      },
+      "app": {
+        "title": "Unable to load this workspace module",
+        "description": "The module shell rendered, but its latest governed data could not be loaded.",
+        "retry": "Retry module",
+        "details": "Technical details"
+      },
+      "docs": {
+        "title": "Unable to load documentation",
+        "description": "The documentation route could not finish rendering for the selected locale.",
+        "retry": "Retry docs",
+        "details": "Technical details"
+      }
+    }
+  },
+  "aiElements": {
+    "attachments": {
+      "source": "Source",
+      "image": "Image",
+      "attachment": "Attachment",
+      "remove": "Remove attachment",
+      "empty": "No attachments"
+    },
+    "context": {
+      "ariaLabel": "Model context usage",
+      "totalCost": "Total cost",
+      "input": "Input",
+      "output": "Output",
+      "reasoning": "Reasoning",
+      "cache": "Cache",
+      "notAvailable": "n/a"
+    },
+    "speechInput": {
+      "start": "Start voice input",
+      "stop": "Stop voice input",
+      "processing": "Transcribing audio",
+      "unavailable": "Voice input unavailable"
+    }
+  }
+}

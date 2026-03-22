@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": ["es2020"],
+    "strict": true,
+    "noEmit": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@openpolis/contracts": ["packages/contracts/src/index.ts"],
+      "@openpolis/contracts/*": ["packages/contracts/src/*"],
+      "@openpolis/domain": ["packages/domain/src/index.ts"],
+      "@openpolis/domain/*": ["packages/domain/src/*"],
+      "@openpolis/governance": ["packages/governance/src/index.ts"],
+      "@openpolis/governance/*": ["packages/governance/src/*"],
+      "@openpolis/application": ["packages/application/src/index.ts"],
+      "@openpolis/application/*": ["packages/application/src/*"],
+      "@openpolis/runtime": ["packages/runtime/src/index.ts"],
+      "@openpolis/runtime/*": ["packages/runtime/src/*"],
+      "@openpolis/db": ["packages/db/src/index.ts"],
+      "@openpolis/db/*": ["packages/db/src/*"],
+      "@openpolis/i18n/*": ["packages/i18n/src/*"],
+      "@openpolis/ui/*": ["packages/ui/src/*"]
+    }
+  }
+}

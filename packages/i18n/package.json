@@ -1,0 +1,15 @@
+{
+  "name": "@openpolis/i18n",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./config": "./src/config.ts",
+    "./navigation": "./src/navigation.ts",
+    "./request": "./src/request.ts",
+    "./routing": "./src/routing.ts"
+  },
+  "dependencies": {
+    "next-intl": "^4.8.3"
+  }
+}

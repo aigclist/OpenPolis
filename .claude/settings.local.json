@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git:*)",
+      "Bash(xargs grep:*)",
+      "Bash(node:*)",
+      "Bash(cd:*)",
+      "Bash(ls:*)"
+    ]
+  }
+}

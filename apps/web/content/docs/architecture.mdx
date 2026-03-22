@@ -1,0 +1,23 @@
+---
+title: Architecture Outline
+description: The baseline stack and how the current implementation is layered.
+---
+
+# Architecture Outline
+
+## Application layers
+
+1. Workspace layer for the app shell, navigation, and role-specific views
+2. Object layer for issues, assets, briefs, tasks, reviews, and reports
+3. Workflow layer for status, assignment, approval, and escalation paths
+4. Agent layer for provider routing, skill scopes, and approval checkpoints
+5. Governance layer for audit, permissions, privacy boundaries, and self-hosted operations
+
+## Baseline stack
+
+- Next.js 16 with App Router
+- `next-intl` for UI messages
+- Tailwind v4 with shared design tokens
+- `shadcn/ui` plus AI Elements for reusable primitives
+- Fumadocs for project and architectural documentation
+- Local SQLite persistence for demo and self-hosted development

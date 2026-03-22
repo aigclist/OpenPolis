@@ -1,0 +1,23 @@
+{
+  "name": "@openpolis/application",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./logging": "./src/logging.ts",
+    "./ports/audit": "./src/ports/audit.ts",
+    "./ports/clock": "./src/ports/clock.ts",
+    "./ports/repositories": "./src/ports/repositories.ts",
+    "./commands/workflow": "./src/commands/workflow.ts",
+    "./read-models/workspace": "./src/read-models/workspace.ts",
+    "./queries/dashboard": "./src/queries/dashboard.ts",
+    "./queries/modules": "./src/queries/modules.ts"
+  },
+  "dependencies": {
+    "@openpolis/contracts": "workspace:*",
+    "@openpolis/domain": "workspace:*",
+    "@openpolis/governance": "workspace:*",
+    "zod": "^4.3.6"
+  }
+}

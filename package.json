@@ -1,43 +1,40 @@
 {
-  "name": "openpolis.org",
+  "name": "openpolis-workspace",
   "version": "0.1.0",
   "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
+  "description": "A lightweight governance operating system for political organizations, local governments, and civic institutions",
+  "keywords": [
+    "governance",
+    "civic-tech",
+    "political-organizations",
+    "local-government",
+    "ngo",
+    "ai-agents",
+    "workflow-automation",
+    "cybernetics",
+    "digital-infrastructure"
+  ],
+  "homepage": "https://github.com/aigclist/OpenPolis#readme",
+  "bugs": {
+    "url": "https://github.com/aigclist/OpenPolis/issues"
   },
-  "dependencies": {
-    "@ai-sdk/react": "^3.0.118",
-    "@base-ui/react": "^1.3.0",
-    "ai": "^6.0.116",
-    "better-sqlite3": "^12.8.0",
-    "class-variance-authority": "^0.7.1",
-    "clsx": "^2.1.1",
-    "drizzle-orm": "^0.45.1",
-    "fumadocs-core": "^16.6.17",
-    "fumadocs-mdx": "^14.2.10",
-    "fumadocs-ui": "^16.6.17",
-    "lucide-react": "^0.577.0",
-    "next": "16.2.0",
-    "next-intl": "^4.8.3",
-    "react": "19.2.4",
-    "react-dom": "19.2.4",
-    "shadcn": "^4.0.8",
-    "tailwind-merge": "^3.5.0",
-    "tw-animate-css": "^1.4.0",
-    "zod": "^4.3.6"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aigclist/OpenPolis.git"
+  },
+  "license": "MIT",
+  "author": "OpenPolis Contributors",
+  "scripts": {
+    "dev": "pnpm --filter web dev",
+    "build": "pnpm --filter web build",
+    "start": "pnpm --filter web start",
+    "lint": "pnpm --filter web lint && pnpm exec eslint packages scripts --ext .js,.mjs,.ts,.tsx,.mts,.cts",
+    "lint:web": "pnpm --filter web lint",
+    "typecheck": "pnpm exec tsc -p packages/contracts/tsconfig.json --noEmit && pnpm exec tsc -p packages/domain/tsconfig.json --noEmit && pnpm exec tsc -p packages/governance/tsconfig.json --noEmit && pnpm exec tsc -p packages/application/tsconfig.json --noEmit && pnpm exec tsc -p packages/runtime/tsconfig.json --noEmit && pnpm exec tsc -p packages/db/tsconfig.json --noEmit && pnpm exec tsc -p packages/i18n/tsconfig.json --noEmit && pnpm exec tsc -p packages/ui/tsconfig.json --noEmit && pnpm exec tsc -p apps/web/tsconfig.json --noEmit",
+    "deps:audit": "node scripts/audit-dependencies.mjs",
+    "test": "tsx --test --test-isolation=none apps/web/tests/action-errors.test.ts apps/web/tests/actor-context.test.ts apps/web/tests/input-validation.test.ts apps/web/tests/operator-route-guard.test.ts apps/web/tests/operator-session.test.ts apps/web/tests/read-governance.test.ts apps/web/tests/request-security.test.ts apps/web/tests/security-headers.test.ts apps/web/tests/server-command-context.test.ts apps/web/tests/workflow-smoke.test.ts packages/application/tests/workflow-service.test.ts packages/contracts/tests/primitives.test.ts packages/db/tests/workspace-migration.test.ts packages/domain/tests/events.test.ts packages/governance/tests/policies.test.ts"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "babel-plugin-react-compiler": "1.0.0",
-    "eslint": "^9",
-    "eslint-config-next": "16.2.0",
-    "tailwindcss": "^4",
-    "typescript": "^5"
+    "tsx": "^4.21.0"
   }
 }

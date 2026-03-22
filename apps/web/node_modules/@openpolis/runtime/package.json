@@ -1,0 +1,15 @@
+{
+  "name": "@openpolis/runtime",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./workspace": "./src/workspace.ts"
+  },
+  "dependencies": {
+    "@openpolis/application": "workspace:*",
+    "@openpolis/contracts": "workspace:*",
+    "@openpolis/db": "workspace:*"
+  }
+}
