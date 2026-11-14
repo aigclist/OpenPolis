@@ -14,7 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Runtime composition root for dependency injection
 - Governance policies: approval gates, retention, sensitive fields, object access
 - Internationalization support (English, Chinese)
-- Next.js 15 web application with React Server Components
+- Next.js 16 web application with React Server Components
 - AI agent runtime foundation
 - Comprehensive test suite for contracts, domain, application, and database layers
 

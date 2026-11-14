@@ -1,4 +1,4 @@
-import { getTranslations } from "next-intl/server";
+import type { getTranslations } from "next-intl/server";
 import type { AgentApprovalState, AgentRun } from "@openpolis/contracts";
 
 import {

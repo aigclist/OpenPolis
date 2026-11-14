@@ -181,12 +181,16 @@ async function createOperatorAccountInternal(
     );
   }
 
-  const user = await context.internalAdapter.createUser({
-    email: parsed.email,
-    name: parsed.name,
-    emailVerified: true,
-    ...claims
-  });
+  const user = await context.internalAdapter.createUser(
+    {
+      email: parsed.email,
+      name: parsed.name,
+      emailVerified: true,
+      ...claims
+    },
+    // Operator accounts are provisioned server-side, like better-auth's admin plugin.
+    { method: "admin" }
+  );
   const hashedPassword = await context.password.hash(parsed.password);
 
   try {

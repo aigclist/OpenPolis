@@ -1,4 +1,4 @@
-import { getTranslations } from "next-intl/server";
+import type { getTranslations } from "next-intl/server";
 import type { ModuleSnapshot } from "@openpolis/application";
 import type { ModuleId } from "@openpolis/ui/namespaces";
 

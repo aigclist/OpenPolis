@@ -52,7 +52,7 @@ Based on cybernetic principles from OGAS (All-State Automated System), adapted f
 
 ## Technology Stack
 
-- **Frontend**: Next.js 15+ with React Server Components
+- **Frontend**: Next.js 16 with React Server Components
 - **Backend**: TypeScript monorepo with clean architecture
 - **Database**: SQLite (migration path to PostgreSQL/Cloudflare D1)
 - **AI**: Multi-agent orchestration system
@@ -82,7 +82,7 @@ OpenPolis/
 ## Quick Start for Developers
 
 ```bash
-# Prerequisites: Node.js 18+, pnpm 8+
+# Prerequisites: Node.js 22+, pnpm 10+
 
 # Clone and install
 git clone https://github.com/aigclist/OpenPolis.git

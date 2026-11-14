@@ -3,11 +3,10 @@ import "server-only";
 import { headers } from "next/headers";
 import { betterAuth } from "better-auth";
 import { isAPIError } from "better-auth/api";
-import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { getMigrations } from "better-auth/db/migration";
 import { nextCookies } from "better-auth/next-js";
 
-import { getDrizzleDb } from "@openpolis/db/client";
+import { getDatabase } from "@openpolis/db/workspace";
 
 import {
   resolveOperatorActorFromSessionUser,
@@ -50,9 +49,10 @@ function createAuthInstance() {
     secret: config.secret,
     baseURL: config.baseURL,
     trustedOrigins: [config.baseURL],
-    database: drizzleAdapter(getDrizzleDb(), {
-      provider: "sqlite"
-    }),
+    // Pass the raw SQLite connection so better-auth uses its built-in Kysely
+    // adapter: its getMigrations() only supports Kysely, and it creates the
+    // user/account/session tables on first run.
+    database: getDatabase(),
     user: {
       additionalFields: {
         operatorProfileId: {

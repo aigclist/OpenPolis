@@ -36,7 +36,7 @@ OpenPolis 是一个 **AI 驱动的治理平台**，专为资源有限的组织�
 
 确保你的电脑已安装：
 
-- **Node.js** 18 或更高版本 → [下载地址](https://nodejs.org/)
+- **Node.js** 22 或更高版本 → [下载地址](https://nodejs.org/)
 - **pnpm** 包管理器 → 安装命令：`npm install -g pnpm`
 
 ### 5 分钟安装
@@ -103,8 +103,8 @@ pnpm dev
 ```bash
 # 1. 安装 Node.js（使用 nvm 推荐）
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
-nvm install 20
-nvm use 20
+nvm install 22
+nvm use 22
 
 # 2. 安装 pnpm
 npm install -g pnpm
@@ -136,7 +136,7 @@ OpenPolis 针对 Cloudflare 进行了优化，部署简单且免费：
 4. 构建设置：
    - 构建命令：`pnpm build`
    - 输出目录：`apps/web/.next`
-   - Node 版本：18 或 20
+   - Node 版本：22 或 24
 5. 配置环境变量（复制 `.env.example` 中的变量）
 6. 推送代码，Cloudflare 自动构建部署
 
@@ -226,7 +226,7 @@ docker run -p 3000:3000 --env-file .env openpolis
 
 ```
 OpenPolis/
-├── apps/web/              # Next.js 15 Web 应用
+├── apps/web/              # Next.js 16 Web 应用
 ├── packages/
 │   ├── contracts/         # 领域契约和 DTO
 │   ├── domain/            # 核心业务逻辑
@@ -354,7 +354,7 @@ OpenPolis is an **AI-powered governance platform** designed for resource-constra
 
 Ensure you have installed:
 
-- **Node.js** 18 or higher → [Download](https://nodejs.org/)
+- **Node.js** 22 or higher → [Download](https://nodejs.org/)
 - **pnpm** package manager → Install: `npm install -g pnpm`
 
 ### 5-Minute Setup
@@ -421,8 +421,8 @@ pnpm dev
 ```bash
 # 1. Install Node.js (using nvm recommended)
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
-nvm install 20
-nvm use 20
+nvm install 22
+nvm use 22
 
 # 2. Install pnpm
 npm install -g pnpm
@@ -454,7 +454,7 @@ OpenPolis is optimized for Cloudflare with simple, free deployment:
 4. Build settings:
    - Build command: `pnpm build`
    - Output directory: `apps/web/.next`
-   - Node version: 18 or 20
+   - Node version: 22 or 24
 5. Configure environment variables (copy from `.env.example`)
 6. Push code, Cloudflare auto-builds and deploys
 
@@ -544,7 +544,7 @@ Merge Results → Check Approval → Execute → Write Back → Return to User
 
 ```
 OpenPolis/
-├── apps/web/              # Next.js 15 Web Application
+├── apps/web/              # Next.js 16 Web Application
 ├── packages/
 │   ├── contracts/         # Domain contracts and DTOs
 │   ├── domain/            # Core business logic
