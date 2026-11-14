@@ -11,8 +11,8 @@
   "dependencies": {
     "@openpolis/application": "workspace:*",
     "@openpolis/governance": "workspace:*",
-    "better-sqlite3": "^12.8.0",
-    "drizzle-orm": "^0.45.1"
+    "better-sqlite3": "^12.11.1",
+    "drizzle-orm": "^0.45.4"
   },
   "devDependencies": {
     "@openpolis/contracts": "workspace:*"

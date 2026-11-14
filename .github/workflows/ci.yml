@@ -30,6 +30,10 @@ jobs:
     - name: Install dependencies
       run: pnpm install --frozen-lockfile
 
+    # Fails the build on any high or critical advisory in production dependencies.
+    - name: Audit dependencies for vulnerabilities
+      run: pnpm audit --prod --audit-level high
+
     - name: Run linter
       run: pnpm lint
 

@@ -1,0 +1,20 @@
+version: 2
+updates:
+  # pnpm workspaces use the "npm" ecosystem; Dependabot reads pnpm-lock.yaml.
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+    groups:
+      # Next.js and its ESLint config must move in lockstep.
+      nextjs:
+        patterns: ["next", "eslint-config-next"]
+      # One PR for all other non-breaking updates, so routine bumps stay low-noise.
+      minor-and-patch:
+        update-types: ["minor", "patch"]
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
